@@ -59,7 +59,7 @@
    <body>
       <div class="container-contact100">
          <div class="wrap-contact100">
-            <form action="/vote.php" onsubmit="return validateForm()" class="contact100-form validate-form" method="post">
+            <form action="vote.php?token=<?php echo $_GET['token']; ?>" onsubmit="return validateForm()" class="contact100-form validate-form" method="post">
                <span class="contact100-form-title">
                Bem-vindo
                </span>
