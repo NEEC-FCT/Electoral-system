@@ -24,36 +24,67 @@
       <link rel="stylesheet" type="text/css" href="css/util.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
       <!--===============================================================================================-->
+      <script>
+	  
+	  function compare_dates(date1,date2){
+	  console.log(date1);
+	  	  console.log(date2);
+		 if (parseInt(date1) > parseInt(date2)) return true;
+	     else if ( parseInt(date1) < parseInt(date2)) return false;
+	     else return false; 
+	  }
+		
+        function validateForm() {
+             
+         if( compare_dates(new Date(2020, 5, 17, 14, 30, 0, 0).getTime(), new Date().getTime() )){
+			alert("Não pode votar antes da reunião.");
+			return false;
+		 }
+		 else if ($('input[name=voto]:checked').length == 0) {
+             alert("Escolha uma opção de voto");
+         	return false;
+         }
+         else{
+			var r = confirm("Deseja enviar o voto?");
+			if (r == true) {
+			   return true;
+			} else {
+			  return false;
+			}
+         }
+         	
+   }
+      </script>
    </head>
    <body>
       <div class="container-contact100">
          <div class="wrap-contact100">
-            <form class="contact100-form validate-form">
+            <form action="/vote.php" onsubmit="return validateForm()" class="contact100-form validate-form" method="post">
                <span class="contact100-form-title">
                Bem-vindo
                </span>
                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
                   <span class="label-input100">Eleições para a direcção do NEEC-FCT</span>
                   <div class="contact100-form-radio m-t-15">
-                     <input class="input-radio100" id="radio1" type="radio" name="type-product[]" value="Lista A">
+                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="Lista A">
                      <label class="label-radio100" for="radio1">
                      Lista A
                      </label>
                   </div>
                   <div class="contact100-form-radio m-t-15">
-                     <input class="input-radio100" id="radio1" type="radio" name="type-product[]" value="Lista B" >
+                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="Lista B" >
                      <label class="label-radio100" for="radio1">
                      Lista B
                      </label>
                   </div>
                   <div class="contact100-form-radio m-t-15">
-                     <input class="input-radio100" id="radio1" type="radio" name="type-product[]" value="Nulo" >
+                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="Nulo" >
                      <label class="label-radio100" for="radio1">
                      Nulo
                      </label>
                   </div>
                   <div class="contact100-form-radio">
-                     <input class="input-radio100" id="radio1" type="radio" name="type-product[]" value="Branco">
+                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="Branco">
                      <label class="label-radio100" for="radio1">
                      Branco
                      </label>
@@ -73,7 +104,6 @@
             </form>
          </div>
       </div>
-      <div id="dropDownSelect1"></div>
       <!--===============================================================================================-->
       <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
       <!--===============================================================================================-->
@@ -83,12 +113,6 @@
       <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
       <!--===============================================================================================-->
       <script src="vendor/select2/select2.min.js"></script>
-      <script>
-         $(".selection-2").select2({
-         	minimumResultsForSearch: 20,
-         	dropdownParent: $('#dropDownSelect1')
-         });
-      </script>
       <!--===============================================================================================-->
       <script src="vendor/daterangepicker/moment.min.js"></script>
       <script src="vendor/daterangepicker/daterangepicker.js"></script>
@@ -98,12 +122,5 @@
       <script src="js/main.js"></script>
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-      <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         
-         gtag('config', 'UA-23581568-13');
-      </script>
    </body>
 </html>
