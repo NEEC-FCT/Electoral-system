@@ -1,6 +1,5 @@
 <?php
 
-require 'db.php';
 //Check time
 if (mktime(14, 30, 0, 6, 17, 2020) < strtotime('now'))
 {
