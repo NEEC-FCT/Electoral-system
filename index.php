@@ -66,13 +66,13 @@
                <div class="wrap-input100 validate-input bg1 rs1-wrap-input100">
                   <span class="label-input100">Eleições para a direcção do NEEC-FCT</span>
                   <div class="contact100-form-radio m-t-15">
-                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="Lista A">
+                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="ListaA">
                      <label class="label-radio100" for="radio1">
                      Lista A
                      </label>
                   </div>
                   <div class="contact100-form-radio m-t-15">
-                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="Lista B" >
+                     <input class="input-radio100" id="radio1" type="radio" name="voto" value="ListaB" >
                      <label class="label-radio100" for="radio1">
                      Lista B
                      </label>
